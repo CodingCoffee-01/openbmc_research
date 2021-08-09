@@ -1,0 +1,93 @@
+
+
+
+//  Build Environment Setting 
+
+. setup romulus build
+
+devtool modify u-boot-aspeed       ==>   unpack u-boot source code 
+
+devtool modify u-boot-aspeed-sdk   ==>   When Romulus change to ast2600
+
+devtool modify linux-aspeed        ==>   unpack linux-aspeed source code 
+
+==>   unpack to   /build/workspace/source
+
+
+// ---------------------------------
+
+
+
+// When ASpeed (BMC IC Vendor release new version BSP  
+
+// ---   meta-aspeed\recipes-kernel\linux\linux-aspeed_git.bb  ----------------
+
+#KBRANCH ?= "dev-5.10"
+#LINUX_VERSION ?= "5.10.46"
+
+# SRCREV="dd1e9367157f900616f0eae3cef897c23d4e7452"
+
+# Kernel dev 5.4
+KBRANCH ?= "dev-5.4"
+LINUX_VERSION ?= "5.4.48"
+
+# skip version sanity, because the version moves with AUTOREV
+KERNEL_VERSION_SANITY_SKIP = "1"
+
+SRCREV="f77eed1af7f260c2444fd5d4e1ebb0d8c4aa366f"
+
+require linux-aspeed.inc
+
+//------------------------------------------------------------------------------
+
+
+// -----  meta-aspeed\recipes-kernel\linux\linux-aspeed.inc ------------------------------------------------------------
+
+DESCRIPTION = "Linux kernel for Aspeed"
+SECTION = "kernel"
+LICENSE = "GPLv2"
+
+PROVIDES += "virtual/kernel"
+
+KCONFIG_MODE="--alldefconfig"
+
+KSRC ?= "git://github.com/openbmc/linux;protocol=git;branch=${KBRANCH}"
+SRC_URI = "${KSRC}"
+SRC_URI += " file://defconfig"
+# Make simple , temp to remove some URI files
+#SRC_URI += " \
+#             file://defconfig \
+#             file://rsa_oem_fitimage_key.key;sha256sum=eeb4ff2ebbfbd97b6254fe6dbaeea41067e54c65176c233ec7b2ab2decf1ddcd \
+#             file://rsa_oem_fitimage_key.crt;sha256sum=45f5a55497cce8040999bf9f3214d471ac7b83ab7acef41c4425a34662e8372e \
+#            " 
+
+LINUX_VERSION_EXTENSION ?= "-${SRCREV}"
+
+PV = "${LINUX_VERSION}+git${SRCPV}"
+
+inherit kernel
+require recipes-kernel/linux/linux-yocto.inc
+
+# before 5.6 MD number
+LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
+
+# From 5.6+ the COPYING file changed
+#LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
+
+//-------------------------------------------------------------------------------------------------------------
+
+
+// Build indiviual Image 
+
+bitbake -f  u-boot-aspeed -c compile
+
+bitbake -f  linux-aspeed -c compile
+
+bitbake obmc-phosphor-image
+
+
+// Testing
+
+~/qemu_test/qemu-system-arm -m 512 -M romulus-bmc -nographic -drive file=./obmc-phosphor-image-romulus.static.mtd,format=raw,if=mtd -net nic -net user
+
+~/qemu_test/qemu-system-arm -m 512 -M tacoma-bmc -nographic -drive file=./obmc-phosphor-image-romulus.static.mtd,format=raw,if=mtd -net nic -net user
