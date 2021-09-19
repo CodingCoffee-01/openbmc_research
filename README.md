@@ -1,3 +1,23 @@
+
+# CodingCoffee   
+
+This is fork from OpenBMC  , Major target is for OpenBMC Training Courses !  
+
+We set  Romulus AST2600 (Romulus porting to AST2600)  is major projects !  
+
+Also use OpenBMC Raspberry Pi as 2 nd project !  
+
+have interest on Training courses , please visit 
+
+https://www.steamcourses.org/blog/239611/openbmc_series_courses1
+
+https://www.steamcourses.org/blog/239612/openbmc_series_courses2
+
+https://www.steamcourses.org/blog/239613/openbmc_series_courses1-1
+
+or mail to sales@astar-tek.com
+
+
 # OpenBMC
 
 [![Build Status](https://openpower.xyz/buildStatus/icon?job=openbmc-build)](https://openpower.xyz/job/openbmc-build/)
