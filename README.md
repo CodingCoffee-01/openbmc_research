@@ -17,6 +17,13 @@ https://www.steamcourses.org/blog/239613/openbmc_series_courses1-1
 
 or mail to sales@astar-tek.com
 
+want to build romulus2600 
+
+Please type : 
+
+. setup romulus2600  build
+
+
 
 # OpenBMC
 
