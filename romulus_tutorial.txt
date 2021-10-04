@@ -1,15 +1,15 @@
+//  By CodingCoffee
 
 
-
-//  Build Environment Setting 
+//  Build Environment Setting
 
 . setup romulus build
 
-devtool modify u-boot-aspeed       ==>   unpack u-boot source code 
+devtool modify u-boot-aspeed       ==>   unpack u-boot source code
 
 devtool modify u-boot-aspeed-sdk   ==>   When Romulus change to ast2600
 
-devtool modify linux-aspeed        ==>   unpack linux-aspeed source code 
+devtool modify linux-aspeed        ==>   unpack linux-aspeed source code
 
 ==>   unpack to   /build/workspace/source
 
@@ -18,7 +18,7 @@ devtool modify linux-aspeed        ==>   unpack linux-aspeed source code
 
 
 
-// When ASpeed (BMC IC Vendor release new version BSP  
+// When ASpeed (BMC IC Vendor release new version BSP
 
 // ---   meta-aspeed\recipes-kernel\linux\linux-aspeed_git.bb  ----------------
 
@@ -59,7 +59,7 @@ SRC_URI += " file://defconfig"
 #             file://defconfig \
 #             file://rsa_oem_fitimage_key.key;sha256sum=eeb4ff2ebbfbd97b6254fe6dbaeea41067e54c65176c233ec7b2ab2decf1ddcd \
 #             file://rsa_oem_fitimage_key.crt;sha256sum=45f5a55497cce8040999bf9f3214d471ac7b83ab7acef41c4425a34662e8372e \
-#            " 
+#            "
 
 LINUX_VERSION_EXTENSION ?= "-${SRCREV}"
 
@@ -77,7 +77,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 //-------------------------------------------------------------------------------------------------------------
 
 
-// Build indiviual Image 
+// Build indiviual Image
 
 bitbake -f  u-boot-aspeed -c compile
 
