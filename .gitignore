@@ -1,4 +1,5 @@
 build*/*
+26*build*/*
 customrc
 *.sw?
 .repo/
