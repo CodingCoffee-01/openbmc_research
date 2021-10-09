@@ -24,6 +24,10 @@ Please type :
 . setup romulus2600  build
 
 
+Romulus2600 reference binary release: 
+
+https://gitlab.com/CodingCoffee-01/openbmc_research_release.git
+
 
 # OpenBMC
 
