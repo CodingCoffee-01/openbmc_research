@@ -2,34 +2,37 @@ FILESEXTRAPATHS_prepend_romulus := "${THISDIR}/${PN}:"
 
 EXTRA_OEMESON_append_romulus = " -Dnegative-errno-on-fail=true"
 
-CHIPS = " \        
-        bus@1e78a000/i2c-bus@200/max31785@52_air \
-        bus@1e78a000/i2c-bus@200/max31785@52_water \
-        bus@1e78a000/i2c-bus@200/power-supply@68 \
-        bus@1e78a000/i2c-bus@200/power-supply@69 \
-        bus@1e78a000/i2c-bus@200/bmp280@77 \
-        bus@1e78a000/i2c-bus@200/dps310@76 \
-	bus@1e78a000/i2c-bus@280/tmp423a@4c \
-        bus@1e78a000/i2c-bus@280/ir35221@70 \
-        bus@1e78a000/i2c-bus@280/ir35221@71 \
-        bus@1e78a000/i2c-bus@300/tmp423a@4c \
-        bus@1e78a000/i2c-bus@300/ir35221@70 \
-        bus@1e78a000/i2c-bus@300/ir35221@71 \
-        bus@1e78a000/i2c-bus@500/tmp275@4a \
-        "
+#CHIPS = " \        
+#        "
 
 CHIPS_romulus2600 = " \
+		      bus@1e78a000/i2c-bus@200/power-supply@68 \
+                      bus@1e78a000/i2c-bus@200/power-supply@69 \	
 		      bus@1e78a000/i2c-bus@680/tmp275@42\
 	              bus@1e78a000/i2c-bus@680/tmp275@46\
-		      pwm-tacho-controller@1e610000\
+	              bus@1e78a000/i2c-bus@200/bmp280@77 \
+                      bus@1e78a000/i2c-bus@200/dps310@76 \
+                      bus@1e78a000/i2c-bus@280/tmp423a@4c \
+                      bus@1e78a000/i2c-bus@280/ir35221@70 \
+                      bus@1e78a000/i2c-bus@280/ir35221@71 \
+                      bus@1e78a000/i2c-bus@300/tmp423a@4c \
+                      bus@1e78a000/i2c-bus@300/ir35221@70 \
+                      bus@1e78a000/i2c-bus@300/ir35221@71 \
+                      bus@1e78a000/i2c-bus@500/tmp275@4a \
+                      pwm-tacho-controller@1e610000\
                     "
 
 CHIPS_romulus     = " \
-		      bus@1e78a000/i2c-bus@440/tmp275@42\
+                      bus@1e78a000/i2c-bus@100/power-supply@68 \
+                      bus@1e78a000/i2c-bus@100/power-supply@69 \
+                      bus@1e78a000/i2c-bus@100/bmp280@77 \
+                      bus@1e78a000/i2c-bus@100/dps310@76 \
+                      bus@1e78a000/i2c-bus@140/tmp423a@4c \ 
+                      bus@1e78a000/i2c-bus@180/tmp423a@4c \
+                      bus@1e78a000/i2c-bus@440/tmp275@42\
                       bus@1e78a000/i2c-bus@440/tmp275@46\
                       pwm-tacho-controller@1e786000 \
                     "
-
 
 ITEMSFMT = "ahb/apb/{0}.conf"
 
