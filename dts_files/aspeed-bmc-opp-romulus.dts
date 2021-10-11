@@ -177,6 +177,23 @@
 
 &i2c3 {
 	status = "okay";
+
+	bmp: bmp280@77 {
+                compatible = "bosch,bmp280";
+                reg = <0x77>;
+                #io-channel-cells = <1>;
+        };
+
+	power-supply@68 {
+                compatible = "ibm,cffps1";
+                reg = <0x68>;
+        };
+
+        power-supply@69 {
+                compatible = "ibm,cffps1";
+                reg = <0x69>;
+        };
+
 };
 
 &i2c4 {
@@ -185,6 +202,10 @@
 
 &i2c5 {
 	status = "okay";
+        tmp423a@4c {
+                compatible = "ti,tmp423";
+                reg = <0x4c>;
+        };
 };
 
 &i2c6 {
@@ -205,6 +226,10 @@
 &i2c9 {
 	/* PCIe slot 4 (x16) */
 	status = "okay";
+	tmp275@4a {
+                compatible = "ti,tmp275";
+                reg = <0x4a>;
+        };
 };
 
 &i2c10 {
