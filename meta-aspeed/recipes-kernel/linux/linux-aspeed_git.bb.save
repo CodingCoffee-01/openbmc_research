@@ -1,10 +1,9 @@
-
 ### Change to ASpeed SDK 
-#KBRANCH = "aspeed-master-v5.15"
-#LINUX_VERSION ?= "5.15.0"
-#SRCREV = "d3fac3133a9f105e9bb8f3ef0b7e0dc39f0db6b6"
 
-###  OpenBMC update to Kernel 5.15.x 
+KBRANCH = "aspeed-master-v5.15"
+LINUX_VERSION ?= "5.15.0"
+SRCREV = "d3fac3133a9f105e9bb8f3ef0b7e0dc39f0db6b6"###  OpenBMC update to Kernel 5.15.x 
+
 KBRANCH ?= "dev-5.15"
 LINUX_VERSION ?= "5.15.61"
 SRCREV="3eec6f89c3c9dd462bba477a7adac4d26f2718b2"
