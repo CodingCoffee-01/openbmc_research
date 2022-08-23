@@ -1,4 +1,34 @@
 
+#  Romulus2600 update status 
+
+##  Background 
+
+OpenBMC major repository have been updated to Kernel 5.15.xx . 
+
+ASpeed SDK have updated to SDK v8.1 , and also updated Kernel to 5.15.xx 
+
+Romulus 2600 try to sync romulus project and aspeed sdk in the same page 
+
+Romulus2600 have updated related recipe update! can fork it and try it !
+
+the status of build image test is like the following table 
+
+------------------------------------------------------------
+|                              qemu              
+------------------------------------------------------------
+|  op515 + op_uboot             OK                
+------------------------------------------------------------
+|  ast515 + op_uboot            OK               
+------------------------------------------------------------
+|  ast515 + ast_uboot          fail(uboot fail)  
+------------------------------------------------------------
+
+if have interest to cowork about training courses and bmc porting projects , can mail codingcoffee.01@gmail.com
+
+The roadmap of romulus2600 is developing , if have any suggestion , please also mail to codingcoffee.01@gmail.com or leave it as issues ! Tks a lot!
+
+
+
 # CodingCoffee   
 
 This is fork from OpenBMC  , Major target is for OpenBMC Training Courses !  
