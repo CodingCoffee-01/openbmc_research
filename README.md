@@ -14,14 +14,14 @@ Romulus2600 have updated related recipe update! can fork it and try it !
 the status of build image test is like the following table 
 
 ------------------------------------------------------------
-|                              qemu              
-------------------------------------------------------------
-|  op515 + op_uboot             OK                
-------------------------------------------------------------
-|  ast515 + op_uboot            OK               
-------------------------------------------------------------
-|  ast515 + ast_uboot          fail(uboot fail)  
-------------------------------------------------------------
+                               qemu              
+
+   op515 + op_uboot             OK                
+
+   ast515 + op_uboot            OK               
+
+   ast515 + ast_uboot          fail(uboot fail)  
+
 
 if have interest to cowork about training courses and bmc porting projects , can mail codingcoffee.01@gmail.com
 
