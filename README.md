@@ -16,11 +16,11 @@ the status of build image test is like the following table
 ------------------------------------------------------------
 
 
-   op515 + op_uboot            qemu  OK                
+   op515 + op_uboot    ==>         qemu test  OK                
 
-   ast515 + op_uboot           qemu  OK               
+   ast515 + op_uboot   ==>         qemu test  OK               
 
-   ast515 + ast_uboot          qemu fail(uboot fail)  
+   ast515 + ast_uboot  ==>         qemu fail(uboot fail)  
 
 
 if have interest to cowork about training courses and bmc porting projects , can mail codingcoffee.01@gmail.com
