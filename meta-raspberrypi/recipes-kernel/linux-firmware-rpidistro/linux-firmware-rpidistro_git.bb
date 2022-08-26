@@ -34,10 +34,13 @@ LIC_FILES_CHKSUM = "\
 NO_GENERIC_LICENSE[Firmware-broadcom_bcm43xx-rpidistro] = "LICENCE.broadcom_bcm43xx"
 NO_GENERIC_LICENSE[WHENCE] = "WHENCE"
 
-SRC_URI = "git://github.com/RPi-Distro/firmware-nonfree"
+#SRC_URI = "git://github.com/RPi-Distro/firmware-nonfree"
+#SRCREV = "83938f78ca2d5a0ffe0c223bb96d72ccc7b71ca5"
+#PV = "20190114-1+rpt11"
 
-SRCREV = "83938f78ca2d5a0ffe0c223bb96d72ccc7b71ca5"
-PV = "20190114-1+rpt11"
+SRC_URI = "git://github.com/RPi-Distro/firmware-nonfree;branch=bullseye;protocol=https"
+SRCREV = "541e5a05d152e7e6f0d9be45622e4a3741e51c02"
+PV = "20210315-3+rpt7"
 
 S = "${WORKDIR}/git"
 
@@ -51,8 +54,8 @@ do_compile() {
 
 do_install() {
     install -d ${D}${nonarch_base_libdir}/firmware/brcm
-
-    cp ./LICENCE.broadcom_bcm43xx ${D}${nonarch_base_libdir}/firmware/LICENCE.broadcom_bcm43xx-rpidistro
+    # temp disable
+    #cp ./LICENCE.broadcom_bcm43xx ${D}${nonarch_base_libdir}/firmware/LICENCE.broadcom_bcm43xx-rpidistro
 
     # Replace outdated linux-firmware files with updated ones from
     # raspbian firmware-nonfree. Raspbian adds blobs and nvram

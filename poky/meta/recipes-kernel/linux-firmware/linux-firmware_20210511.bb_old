@@ -737,6 +737,8 @@ FILES_${PN}-bcm43340 = "${nonarch_base_libdir}/firmware/brcm/brcmfmac43340-sdio.
   ${nonarch_base_libdir}/firmware/cypress/cyfmac43340-sdio.*"
 FILES_${PN}-bcm43362 = "${nonarch_base_libdir}/firmware/brcm/brcmfmac43362-sdio.* \
   ${nonarch_base_libdir}/firmware/cypress/cyfmac43362-sdio.*"
+FILES_${PN}-bcm43430 = "${nonarch_base_libdir}/firmware/brcm/brcmfmac43430-sdio.* \
+  ${nonarch_base_libdir}/firmware/cypress/cyfmac43430-sdio.*"
 FILES_${PN}-bcm4354 = "${nonarch_base_libdir}/firmware/brcm/brcmfmac4354-sdio.bin \
   ${nonarch_base_libdir}/firmware/cypress/cyfmac4354-sdio.bin \
 "
