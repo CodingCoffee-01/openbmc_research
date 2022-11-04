@@ -1,0 +1,19 @@
+# CodingCoffee  C/C++ GitPod Examples more courses : http://www.codingcoffee.org
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: echo 'this is linux kernel image build example' # runs during prebuild
+    command: echo 'arm linux kernel build tutorial' && sudo apt update && sudo apt-get -y install libsdl1.2-dev xterm sed cvs subversion coreutils texi2html docbook-utils python-pysqlite2 help2man make gcc g++ desktop-file-utils libgl1-mesa-dev libglu1-mesa-dev mercurial autoconf automake groff curl lzop asciidoc u-boot-tools gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat cpio python python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping liblz4-tool zstd qemu-system-aarch64 && sudo apt-get -y install gcc-aarch64-linux-gnu
+
+
+# CodingCoffee  C/C++ GitPod Examples more courses : http://www.codingcoffee.org
+ports:
+  - port: 3000
+    onOpen: open-preview
+  - port: 6080
+    onOpen: open-preview
+  - port: 5900
+    onOpen: ignore
+  - port: 35900
+    onOpen: ignore
