@@ -1,6 +1,6 @@
 # CodingCoffee  Openbmc GitPod Examples more courses : http://www.codingcoffee.org
-#image:
-#  file: .gitpod.Dockerfile
+image:
+  file: .gitpod.Dockerfile
 
 tasks:
   - init: echo 'this is Openbmc romulus2600 ' # runs during prebuild
